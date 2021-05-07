@@ -100,5 +100,9 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   health: 120
   damage: 40
-  minDist: 2
-  maxDist: 5
+  minDist: 1
+  maxDist: 2
+  speed: 3
+  cooldown: 2
+  cible: {fileID: 0}
+  positionToMove: {x: 0, y: 0}

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 256277605655012946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4804244068753493357}
   m_Father: {fileID: 0}
@@ -71,10 +71,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -806747818847928528, guid: 896206e0e4c669a44b4899dd45605208,
     type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,11 @@ MonoBehaviour:
   health: 100
   damage: 20
   minDist: 0
-  maxDist: 1
+  maxDist: 0.12
+  speed: 5
+  cooldown: 1
+  cible: {fileID: 0}
+  positionToMove: {x: 0, y: 0}
 --- !u!1 &7432362592927799996
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 7432362592927799996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children: []
   m_Father: {fileID: 256277605655012944}
   m_RootOrder: 0
@@ -172,10 +176,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -806747818847928528, guid: 896206e0e4c669a44b4899dd45605208,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

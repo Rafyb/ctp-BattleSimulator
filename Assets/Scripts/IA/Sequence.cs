@@ -19,8 +19,8 @@ public class Sequence : Node
             switch (node.Evaluate())
             {
                 case NodeState.RUNNING:
-                    isRunning = true;
-                    break;
+                    _nodeState = NodeState.RUNNING;
+                    return _nodeState;
                 case NodeState.SUCCESS:
                     break;
                 case NodeState.FAILURE:
@@ -30,7 +30,7 @@ public class Sequence : Node
                     break;
             }
         }
-        _nodeState = isRunning ? NodeState.RUNNING : NodeState.SUCCESS;
+        _nodeState =  NodeState.SUCCESS;
         return _nodeState;
     }
 }

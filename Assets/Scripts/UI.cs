@@ -46,7 +46,7 @@ public class UI : MonoBehaviour
 
     public void Validate()
     {
-        Game.Instance.OnValidate();
+        Game.Instance.OnStart();
         groupPrep.SetActive(false);
     }
 

@@ -22,6 +22,9 @@ MonoBehaviour:
   - soldat: {fileID: 4832101947119562292, guid: f08d7cf17c59744499febc7facd1b680,
       type: 3}
     position: {x: 2, y: 0}
+  - soldat: {fileID: 7341903085626554265, guid: 16530220862a27548a5c208cba5b9188,
+      type: 3}
+    position: {x: 2, y: 0.2}
   soldatMax: 4
   nbCAC: 4
   nbArcher: 4

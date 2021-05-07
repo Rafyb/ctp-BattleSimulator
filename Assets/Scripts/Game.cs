@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     {
         Instance = this;
     }
+    public Camera cam;
 
     public Transform maxBorder;
     public Transform minBorder;
@@ -43,11 +44,8 @@ public class Game : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("click");
-
                 Vector3 mousePosition = Input.mousePosition;
                 Vector2 v = Camera.main.ScreenToWorldPoint(mousePosition);
-                Debug.Log(v);
 
                 if(v.x < (maxBorder.position.x + minBorder.position.x) && v.x > minBorder.position.x && v.y > minBorder.position.y && v.y < maxBorder.position.y)
                 {
@@ -87,6 +85,21 @@ public class Game : MonoBehaviour
     {
         _levelIdx++;
         StartLevel(_levelIdx);
+    }
+
+    public void OnStart()
+    {
+        state = GameState.BATTLE;
+    }
+
+    public List<Soldat> GetEnemies(int team)
+    {
+        if(team == 0)
+        {
+            return _war.team2;
+        }
+        return _war.team1;
+
     }
 
     private void StartLevel(int idx)
@@ -141,8 +154,5 @@ public class Game : MonoBehaviour
     }
 
 
-    public void OnValidate()
-    {
-        state = GameState.BATTLE;
-    }
+
 }
