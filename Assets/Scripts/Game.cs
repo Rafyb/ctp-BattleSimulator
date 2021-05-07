@@ -24,6 +24,9 @@ public class Game : MonoBehaviour
     public GameObject[] prefabsTeam1;
     public GameObject[] prefabsTeam2;
 
+    public GameObject[] prefabProjectile;
+
+
     public Level[] levels;
     int _levelIdx = 0;
 
@@ -40,6 +43,10 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && cam.orthographicSize < 1.6f) cam.orthographicSize+=0.1f;
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f && cam.orthographicSize > 0.5f) cam.orthographicSize-=0.1f;
+
+
         if (state == GameState.PREPARING)
         {
             if (Input.GetMouseButtonDown(0))
@@ -153,6 +160,11 @@ public class Game : MonoBehaviour
         ui.SetUnitRestant(idx, nbRest - 1);
     }
 
-
+    public void Shoot(int idx,Soldat soldat)
+    {
+        GameObject go = Instantiate(prefabProjectile[idx], soldat.position, Quaternion.identity);
+        go.GetComponent<Projectile>().damage = soldat.damage;
+        go.GetComponent<Projectile>().cible = soldat.cible;
+    }
 
 }

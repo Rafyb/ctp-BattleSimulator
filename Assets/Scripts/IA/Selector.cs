@@ -13,8 +13,7 @@ public class Selector : Node
 
     public override NodeState Evaluate()
     {
-        int i = 0;
-        foreach (var node in _nodes)
+        foreach (Node node in _nodes)
         {
             switch (node.Evaluate())
             {

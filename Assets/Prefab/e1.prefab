@@ -185,7 +185,7 @@ MonoBehaviour:
   damage: 20
   minDist: 0
   maxDist: 0.12
-  speed: 5
+  speed: 3
   cooldown: 1
   cible: {fileID: 0}
   positionToMove: {x: 0, y: 0}

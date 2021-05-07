@@ -44,7 +44,7 @@ public class Soldat : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        var increment = 10;
+        int increment = 10;
         Vector3 pos = new Vector3(position.x, position.y, 0f);
         
         for (int angle = 0; angle < 360; angle = angle + increment)

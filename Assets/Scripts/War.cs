@@ -7,10 +7,13 @@ public class War : MonoBehaviour
     public List<Soldat> team2;
     public List<Soldat> team1;
 
+    public float timer = 60f;
+
 
     public void UpdateIA()
     {
-
+        timer -= Time.deltaTime;
+        Game.Instance.ui.SetTimer((int)Mathf.Ceil(timer));
 
         bool teamDeath = true;
         foreach(Soldat s in team1)
@@ -20,6 +23,11 @@ public class War : MonoBehaviour
                 s.Evaluate();
                 teamDeath = false;
             }
+        }
+        if (teamDeath)
+        {
+            Game.Instance.state = GameState.LOSE;
+            return;
         }
 
         teamDeath = true;
@@ -31,6 +39,13 @@ public class War : MonoBehaviour
                 teamDeath = false;
             }
         }
+        if (teamDeath)
+        {
+            Game.Instance.state = GameState.WIN;
+            return;
+        }
+
+        if(timer <= 0f) Game.Instance.state = GameState.LOSE;
     }
 
 

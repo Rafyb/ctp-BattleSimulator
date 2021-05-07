@@ -17,6 +17,13 @@ public class UI : MonoBehaviour
     public GameObject groupWin;
     public GameObject groupLose;
 
+    public Text timer;
+
+    public void SetTimer(int time)
+    {
+        timer.text = "" + time;
+    }
+
     public int GetRestant()
     {
         return _restant;

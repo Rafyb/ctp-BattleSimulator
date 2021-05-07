@@ -13,8 +13,7 @@ public class Sequence : Node
 
     public override NodeState Evaluate()
     {
-        bool isRunning = false;
-        foreach (var node in _nodes)
+        foreach (Node node in _nodes)
         {
             switch (node.Evaluate())
             {
