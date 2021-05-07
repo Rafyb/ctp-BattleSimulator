@@ -37,9 +37,9 @@ public class PositionToMove : Node
         {
             // reculer
             if(_soldat.position.x > _soldat.cible.position.x)
-                _soldat.positionToMove = Vector2.Lerp(_soldat.position - _soldat.cible.position, _soldat.position, _soldat.minDist / 100);
+                _soldat.positionToMove = Vector2.Lerp(_soldat.cible.position - _soldat.position, _soldat.position, _soldat.minDist / 100);
             else
-                _soldat.positionToMove = Vector2.Lerp( _soldat.cible.position - _soldat.position, _soldat.position, _soldat.minDist / 100);
+                _soldat.positionToMove = Vector2.Lerp(_soldat.position - _soldat.cible.position, _soldat.position, _soldat.minDist / 100);
         }
         else
         {

@@ -26,6 +26,6 @@ MonoBehaviour:
       type: 3}
     position: {x: 2, y: 0.2}
   soldatMax: 4
-  nbCAC: 4
-  nbArcher: 4
+  nbCAC: 3
+  nbArcher: 3
   nbDistance: 2

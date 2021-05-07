@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
-            if (Vector2.Distance(transform.position, toPoint.position) < 0.05f)
+            if (Vector2.Distance(transform.position, toPoint.position) < 0.1f)
             {
                 toPoint.TakeHit(damage);
                 Destroy(gameObject);
