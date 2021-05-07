@@ -38,8 +38,6 @@ public class Soldat : MonoBehaviour
     {
         position = new Vector2(transform.position.x, transform.position.y);
 
-
-
     }
 
     private void OnDrawGizmos()
@@ -91,19 +89,20 @@ public class Soldat : MonoBehaviour
         GetComponent<SpriteRenderer>().DOColor(Color.red, 0.5f).OnComplete(() =>
         {
             health -= dmg;
-            GetComponent<SpriteRenderer>().DOColor(Color.white, 0.5f);
+            GetComponent<SpriteRenderer>()?.DOColor(Color.white, 0.5f);
 
         }); ;
     }
 
     public void Evaluate()
     {
-        _brain.Evaluate();
 
         if(health <= 0)
         {
             Destroy(gameObject);
         }
+
+        _brain.Evaluate();
     }
 
 }
